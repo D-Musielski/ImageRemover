@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "Images Remover",
+    "version": "1.0.0",
+    "description": "Extension that removes all images from the websites",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "matches": ["*://*/*"],
+        "js": ["hide.js"]
+    }],
+    "permissions": [
+        "tabs", "http://*/*", "https://*/*"
+    ]
+}
